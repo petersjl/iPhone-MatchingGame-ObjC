@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,374 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MatchingGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Sc-hz-aql">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tYC-MQ-GuW"/>
+                                    <barButtonItem title="New Game" id="T9F-cv-1Tt">
+                                        <connections>
+                                            <action selector="pressedNewGame:" destination="BYZ-38-t0r" id="y6q-Hk-IBB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEC-lv-2up">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="QNs-q7-71F"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="gPC-hq-Tm8">
+                                        <barButtonItem key="leftBarButtonItem" title="New Game" id="C5U-Lj-dSB">
+                                            <connections>
+                                                <action selector="pressedNewGame:" destination="BYZ-38-t0r" id="5gM-T5-dSs"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0cu-Rg-5Z3" userLabel="UseableArea">
+                                <rect key="frame" x="0.0" y="68" width="768" height="956"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0u-Ii-gMx" userLabel="Game Board">
+                                        <rect key="frame" x="104" y="128" width="560" height="700"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NCa-1Z-1wl" userLabel="Buttons">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="700"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TSO-5V-d5o" userLabel="Row1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="560" height="140"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xB-mn-r3Q" userLabel="0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6pP-pa-b6d"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Atj-77-FZN" userLabel="1">
+                                                                <rect key="frame" x="140" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tes-gd-Xcu"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qby-Nz-he5" userLabel="2">
+                                                                <rect key="frame" x="280" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="83U-Pm-lXk"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLa-SC-6Gj" userLabel="3">
+                                                                <rect key="frame" x="420" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p5Z-Aq-Sbr"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cp8-uq-Ig1" userLabel="Row2">
+                                                        <rect key="frame" x="0.0" y="140" width="560" height="140"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeM-O2-8pZ" userLabel="4">
+                                                                <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5cr-q2-c16"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYn-x7-7w2" userLabel="5">
+                                                                <rect key="frame" x="140" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gxm-T1-iab"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2S-3C-lvT" userLabel="6">
+                                                                <rect key="frame" x="280" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2t3-ka-oNa"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9L-qC-19C" userLabel="7">
+                                                                <rect key="frame" x="420" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fNl-m0-aan"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1sE-M6-ghs" userLabel="Row3">
+                                                        <rect key="frame" x="0.0" y="280" width="560" height="140"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p77-kG-fLP" userLabel="8">
+                                                                <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DuO-Nl-IXM"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qn2-Wg-OQU" userLabel="9">
+                                                                <rect key="frame" x="140" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MUu-CA-wgZ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ci-Nd-oXh" userLabel="10">
+                                                                <rect key="frame" x="280" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FI8-KF-n1r"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yiw-HX-npu" userLabel="11">
+                                                                <rect key="frame" x="420" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jZZ-H7-v2c"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2Is-0E-sgR" userLabel="Row4">
+                                                        <rect key="frame" x="0.0" y="420" width="560" height="140"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKM-Rc-Gib" userLabel="12">
+                                                                <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XDd-PD-tyy"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBT-fA-yVD" userLabel="13">
+                                                                <rect key="frame" x="140" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7No-f4-rgZ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8k-tZ-zRV" userLabel="14">
+                                                                <rect key="frame" x="280" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6UJ-aY-Rhk"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzQ-ck-L9Y" userLabel="15">
+                                                                <rect key="frame" x="420" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WRV-Sa-TIC"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TBO-hc-Fy0" userLabel="Row5">
+                                                        <rect key="frame" x="0.0" y="560" width="560" height="140"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azv-lT-Lxg" userLabel="16">
+                                                                <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6aF-cg-d9p"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Br0-hB-DnT" userLabel="17">
+                                                                <rect key="frame" x="140" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N2w-gB-klb"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwc-q9-0a4" userLabel="18">
+                                                                <rect key="frame" x="280" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Agn-MJ-nlF"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvC-a3-hpB" userLabel="19">
+                                                                <rect key="frame" x="420" y="0.0" width="140" height="140"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                                <connections>
+                                                                    <action selector="pressedGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Omr-Hv-PrY"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="NCa-1Z-1wl" firstAttribute="leading" secondItem="w0u-Ii-gMx" secondAttribute="leading" id="Ao6-S1-1KZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="NCa-1Z-1wl" secondAttribute="trailing" id="WmH-YF-vYY"/>
+                                            <constraint firstAttribute="width" constant="560" id="bm8-hb-V3k"/>
+                                            <constraint firstAttribute="bottom" secondItem="NCa-1Z-1wl" secondAttribute="bottom" id="i60-Kn-baw"/>
+                                            <constraint firstItem="NCa-1Z-1wl" firstAttribute="top" secondItem="w0u-Ii-gMx" secondAttribute="top" id="nZn-42-3Q3"/>
+                                            <constraint firstAttribute="height" constant="700" id="oEa-du-m56"/>
+                                            <constraint firstAttribute="width" secondItem="w0u-Ii-gMx" secondAttribute="height" multiplier="4:5" id="qtK-Hx-Kur"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="bm8-hb-V3k"/>
+                                                <exclude reference="oEa-du-m56"/>
+                                                <exclude reference="qtK-Hx-Kur"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="qtK-Hx-Kur"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="bm8-hb-V3k"/>
+                                                <include reference="oEa-du-m56"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.47058823529411764" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="w0u-Ii-gMx" firstAttribute="centerY" secondItem="0cu-Rg-5Z3" secondAttribute="centerY" id="Ijq-w7-47k"/>
+                                    <constraint firstAttribute="trailing" secondItem="w0u-Ii-gMx" secondAttribute="trailing" constant="20" id="QtR-oI-hYK"/>
+                                    <constraint firstItem="w0u-Ii-gMx" firstAttribute="centerX" secondItem="0cu-Rg-5Z3" secondAttribute="centerX" id="RkQ-i6-BCP"/>
+                                    <constraint firstItem="w0u-Ii-gMx" firstAttribute="leading" secondItem="0cu-Rg-5Z3" secondAttribute="leading" constant="20" id="gXw-Bg-n3T"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QtR-oI-hYK"/>
+                                        <exclude reference="gXw-Bg-n3T"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="QtR-oI-hYK"/>
+                                        <include reference="gXw-Bg-n3T"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gEC-lv-2up" secondAttribute="trailing" id="5Jf-5o-FpR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="0cu-Rg-5Z3" secondAttribute="top" id="85Y-Xz-fRi"/>
+                            <constraint firstItem="0cu-Rg-5Z3" firstAttribute="bottom" secondItem="3Sc-hz-aql" secondAttribute="top" id="Cdy-KY-Ya8"/>
+                            <constraint firstItem="3Sc-hz-aql" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="L14-ks-i1z"/>
+                            <constraint firstItem="gEC-lv-2up" firstAttribute="bottom" secondItem="0cu-Rg-5Z3" secondAttribute="top" id="LQQ-Aj-rkq"/>
+                            <constraint firstItem="gEC-lv-2up" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Mor-K1-T4g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3Sc-hz-aql" secondAttribute="bottom" id="S4z-6Y-0EO"/>
+                            <constraint firstItem="3Sc-hz-aql" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bYB-38-vlz"/>
+                            <constraint firstItem="gEC-lv-2up" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="e2b-Oe-K4m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0cu-Rg-5Z3" secondAttribute="bottom" id="gl4-wb-bwO"/>
+                            <constraint firstItem="0cu-Rg-5Z3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pJM-9d-7QI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0cu-Rg-5Z3" secondAttribute="trailing" id="xyc-00-3YA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="3Sc-hz-aql"/>
+                                <exclude reference="gEC-lv-2up"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Cdy-KY-Ya8"/>
+                                <exclude reference="5Jf-5o-FpR"/>
+                                <exclude reference="85Y-Xz-fRi"/>
+                                <exclude reference="S4z-6Y-0EO"/>
+                                <exclude reference="gl4-wb-bwO"/>
+                                <exclude reference="LQQ-Aj-rkq"/>
+                                <exclude reference="Mor-K1-T4g"/>
+                                <exclude reference="e2b-Oe-K4m"/>
+                                <exclude reference="L14-ks-i1z"/>
+                                <exclude reference="bYB-38-vlz"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="3Sc-hz-aql"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Cdy-KY-Ya8"/>
+                                <include reference="85Y-Xz-fRi"/>
+                                <include reference="S4z-6Y-0EO"/>
+                                <include reference="L14-ks-i1z"/>
+                                <include reference="bYB-38-vlz"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="gEC-lv-2up"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="5Jf-5o-FpR"/>
+                                <include reference="gl4-wb-bwO"/>
+                                <include reference="LQQ-Aj-rkq"/>
+                                <include reference="Mor-K1-T4g"/>
+                                <include reference="e2b-Oe-K4m"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outletCollection property="gameBoardButtons" destination="1xB-mn-r3Q" collectionClass="NSMutableArray" id="BrH-3F-NJt"/>
+                        <outletCollection property="gameBoardButtons" destination="Atj-77-FZN" collectionClass="NSMutableArray" id="odX-1w-ZtJ"/>
+                        <outletCollection property="gameBoardButtons" destination="qby-Nz-he5" collectionClass="NSMutableArray" id="PI1-UG-Sgv"/>
+                        <outletCollection property="gameBoardButtons" destination="tLa-SC-6Gj" collectionClass="NSMutableArray" id="haR-GS-ZHf"/>
+                        <outletCollection property="gameBoardButtons" destination="LeM-O2-8pZ" collectionClass="NSMutableArray" id="qod-dG-CmB"/>
+                        <outletCollection property="gameBoardButtons" destination="kYn-x7-7w2" collectionClass="NSMutableArray" id="im7-ia-FJ4"/>
+                        <outletCollection property="gameBoardButtons" destination="q2S-3C-lvT" collectionClass="NSMutableArray" id="8YF-sn-IdL"/>
+                        <outletCollection property="gameBoardButtons" destination="Q9L-qC-19C" collectionClass="NSMutableArray" id="8f2-ml-sCd"/>
+                        <outletCollection property="gameBoardButtons" destination="p77-kG-fLP" collectionClass="NSMutableArray" id="qvb-M2-pwD"/>
+                        <outletCollection property="gameBoardButtons" destination="Qn2-Wg-OQU" collectionClass="NSMutableArray" id="L2O-q5-jbe"/>
+                        <outletCollection property="gameBoardButtons" destination="9Ci-Nd-oXh" collectionClass="NSMutableArray" id="9Ew-IU-UTj"/>
+                        <outletCollection property="gameBoardButtons" destination="Yiw-HX-npu" collectionClass="NSMutableArray" id="kae-DU-6aJ"/>
+                        <outletCollection property="gameBoardButtons" destination="UKM-Rc-Gib" collectionClass="NSMutableArray" id="6SP-JE-OfZ"/>
+                        <outletCollection property="gameBoardButtons" destination="KBT-fA-yVD" collectionClass="NSMutableArray" id="7tH-qO-S0w"/>
+                        <outletCollection property="gameBoardButtons" destination="L8k-tZ-zRV" collectionClass="NSMutableArray" id="ytq-TS-s45"/>
+                        <outletCollection property="gameBoardButtons" destination="lzQ-ck-L9Y" collectionClass="NSMutableArray" id="qba-bi-8oo"/>
+                        <outletCollection property="gameBoardButtons" destination="Azv-lT-Lxg" collectionClass="NSMutableArray" id="P2F-Wf-THt"/>
+                        <outletCollection property="gameBoardButtons" destination="Br0-hB-DnT" collectionClass="NSMutableArray" id="NwU-lQ-Zf2"/>
+                        <outletCollection property="gameBoardButtons" destination="kwc-q9-0a4" collectionClass="NSMutableArray" id="7wn-IW-ry5"/>
+                        <outletCollection property="gameBoardButtons" destination="QvC-a3-hpB" collectionClass="NSMutableArray" id="kFD-oS-uFE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="581" y="110"/>
         </scene>
     </scenes>
 </document>
